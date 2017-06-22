@@ -791,7 +791,7 @@ function gitfetch {
 		else
 			RECURSE="--recursive"
 		fi
-		git clone --progress $RECURSE http://git.gnuradio.org/git/gnuradio.git >>$LOGDEV 2>&1
+		git clone --progress $RECURSE git clone https://github.com/gnuradio/gnuradio.git >>$LOGDEV 2>&1
 		if [ ! -d gnuradio/gnuradio-core -a ! -d gnuradio/gnuradio-runtime ]
 		then
 			my_echo "Could not find gnuradio/gnuradio-{core,runtime} after GIT checkout"
