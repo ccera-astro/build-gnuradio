@@ -871,7 +871,7 @@ function gitfetch {
 	rm -rf bladeRF
 	rm -rf airspy
 	my_echo Fetching rtl-sdr "(rtl-sdr, gr-osmosdr, gr-iqbal, hackrf, bladeRF and airspy)" via GIT
-	git clone --progress git://github.com/patchvonbraun/rtl-sdr >>$LOGDEV 2>&1
+	git clone --progress git://git.osmocom.org/rtl-sdr >>$LOGDEV 2>&1
 	git clone --progress git://git.osmocom.org/gr-osmosdr >>$LOGDEV 2>&1
 	git clone --progress git://git.osmocom.org/gr-iqbal.git >>$LOGDEV 2>&1
 	git clone https://github.com/Nuand/bladeRF.git >>$LOGDEV 2>&1
