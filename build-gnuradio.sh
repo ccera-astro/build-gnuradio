@@ -83,6 +83,9 @@ then
 	exit
 fi
 
+# prevent local definitions from interfering with build
+CXXFLAGS=
+CFLAGS=
 VERBOSE=No
 JFLAG=""
 LOGDEV=/dev/null
@@ -445,7 +448,7 @@ function prereqs {
 			  
 
 		;;
-		*22*|*23*)
+		*22*|*23*|*24*|*25*|*26*)
 			sudo dnf -y erase 'gnuradio*' >>$LOGDEV 2>&1
 			sudo dnf -y erase 'libgruel-*' >>$LOGDEV 2>&1
 			sudo dnf -y erase 'libgruel*' >>$LOGDEV 2>&1
@@ -463,7 +466,7 @@ function prereqs {
 				comedilib comedilib-devel	pygtk2 ncurses-"*" thrift-devel python-thrift scipy >>$LOGDEV 2>&1
 		;;
 		*)
-			my_echo Only Fedora release 12 - 23 are supported by this script
+			my_echo Only Fedora release 12 - 26 are supported by this script
 			doexit WRONGRELEASE
 			;;
 		esac
