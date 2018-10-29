@@ -547,7 +547,7 @@ function prereqs {
 			liborc-0.4-0 liborc-0.4-dev libasound2-dev python-gtk2 libzmq libzmq-dev libzmq1 libzmq1-dev python-requests
 			libncurses5 libncurses5-dev"
 			;;
-		*18*)
+		*18*|*19*)
 			PKGLIST="libfontconfig1-dev libxrender-dev libpulse-dev swig g++
 			automake autoconf libtool python-dev libfftw3-dev
 			libcppunit-dev libboost-all-dev libusb-dev libusb-1.0-0-dev fort77
@@ -557,7 +557,7 @@ function prereqs {
 			libqwt5-qt4-dev libqwtplot3d-qt4-dev pyqt4-dev-tools python-qwt5-qt4
 			cmake git-core wget libxi-dev python-docutils gtk2-engines-pixbuf r-base-dev python-tk
 			liborc-0.4-0 liborc-0.4-dev libasound2-dev python-gtk2 libzmq libzmq-dev  python-requests
-			libncurses5 libncurses5-dev"
+			libncurses5 libncurses5-dev python-setuptools"
 			;;
 			
 		*)
