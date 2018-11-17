@@ -584,6 +584,22 @@ function prereqs {
 		sudo apt-get -y purge 'libgnuradio*' >>$LOGDEV 2>&1
 		sudo apt-get -y purge 'python-gnuradio*' >>$LOGDEV 2>&1
 		case `grep DISTRIB_RELEASE /etc/lsb-release` in
+		*18.*)
+			PKGLIST="libqwt6 libfontconfig1-dev libxrender-dev libpulse-dev swig g++
+			automake autoconf libtool python-dev libfftw3-dev
+			libcppunit-dev libboost-all-dev libusb-dev libusb-1.0-0-dev fort77
+			libsdl1.2-dev git-core
+			libqt4-dev python-numpy ccache python-opengl libgsl0-dev
+			python-cheetah python-mako python-lxml doxygen qt4-default qt4-dev-tools libusb-1.0-0-dev
+			libqwt5-qt4-dev pyqt4-dev-tools python-qwt5-qt4
+			cmake git-core wget libxi-dev python-docutils gtk2-engines-pixbuf r-base-dev python-tk
+			liborc-0.4-0 liborc-0.4-dev libasound2-dev python-gtk2 libzmq python-requests
+			python-sphinx comedi-dev python-zmq libncurses5 libncurses5-dev python-wxgtk3.0 python-setuptools
+			libcanberra-gtk-module"
+			CMAKE_FLAG1=-DPythonLibs_FIND_VERSION:STRING="2.7"
+			CMAKE_FLAG2=-DPythonInterp_FIND_VERSION:STRING="2.7"
+			;;
+
 		*15.*|*16.*)
 			PKGLIST="libqwt6 libfontconfig1-dev libxrender-dev libpulse-dev swig g++
 			automake autoconf libtool python-dev libfftw3-dev
@@ -795,6 +811,8 @@ function gitfetch {
 			RECURSE="--recursive"
 		fi
 		git clone --progress $RECURSE  https://github.com/gnuradio/gnuradio.git >>$LOGDEV 2>&1
+		git submodule init  >>$LOGDEV 2>&1
+		git submodule update >>$LOGDEV 2>&1
 		if [ ! -d gnuradio/gnuradio-core -a ! -d gnuradio/gnuradio-runtime ]
 		then
 			my_echo "Could not find gnuradio/gnuradio-{core,runtime} after GIT checkout"
@@ -810,6 +828,8 @@ function gitfetch {
 		then
 			cd gnuradio
 			git checkout maint >>$LOGDEV 2>&1
+		        git submodule init  >>$LOGDEV 2>&1
+		        git submodule update >>$LOGDEV 2>&1
 			cd $CWD
 		fi
 		
