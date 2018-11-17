@@ -588,13 +588,14 @@ function prereqs {
 			PKGLIST="libqwt6 libfontconfig1-dev libxrender-dev libpulse-dev swig g++
 			automake autoconf libtool python-dev libfftw3-dev
 			libcppunit-dev libboost-all-dev libusb-dev libusb-1.0-0-dev fort77
-			libsdl1.2-dev python-wxgtk2.8 git-core
+			libsdl1.2-dev git-core
 			libqt4-dev python-numpy ccache python-opengl libgsl0-dev
 			python-cheetah python-mako python-lxml doxygen qt4-default qt4-dev-tools libusb-1.0-0-dev
-			libqwt5-qt4-dev libqwtplot3d-qt4-dev pyqt4-dev-tools python-qwt5-qt4
+			libqwt5-qt4-dev pyqt4-dev-tools python-qwt5-qt4
 			cmake git-core wget libxi-dev python-docutils gtk2-engines-pixbuf r-base-dev python-tk
-			liborc-0.4-0 liborc-0.4-dev libasound2-dev python-gtk2 libzmq libzmq-dev libzmq1 libzmq1-dev python-requests
-			python-sphinx comedi-dev python-zmq libncurses5 libncurses5-dev python-wxgtk3.0 python-setuptools"
+			liborc-0.4-0 liborc-0.4-dev libasound2-dev python-gtk2 libzmq python-requests
+			python-sphinx comedi-dev python-zmq libncurses5 libncurses5-dev python-wxgtk3.0 python-setuptools
+			libcanberra-gtk-module"
 			CMAKE_FLAG1=-DPythonLibs_FIND_VERSION:STRING="2.7"
 			CMAKE_FLAG2=-DPythonInterp_FIND_VERSION:STRING="2.7"
 			;;
